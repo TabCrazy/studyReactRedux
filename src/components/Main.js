@@ -6,6 +6,7 @@ import { hashHistory , Router , Route , IndexRoute } from 'react-router';
 
 import Framework from './framework/';
 import Metro from './metro/';
+import Notes from './notes/'
 
 class AppComponent extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class AppComponent extends React.Component {
         <Router history = {hashHistory} >
             <Route path="/" component={Framework}>
               <IndexRoute component={Metro}/>
+              <Route path="/notes" component={Notes} />
             </Route>
         </Router>
 

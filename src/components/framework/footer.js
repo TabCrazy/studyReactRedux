@@ -7,7 +7,7 @@ class Foot extends Component {
     render() {
         return (
             <footer className = "footer">
-                <div className = "copy" >©2017 TabTang </div>
+                <div className = "copy" >©2017 <a href="ownw3c.com">TabTang</a> </div>
             </footer>
         )
     }

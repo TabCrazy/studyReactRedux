@@ -3,7 +3,7 @@
  */
 import React , { Component } from 'react';
 
-export default class Metro extends Component {
+export default class Notes extends Component {
 
     constructor(){
         super();
@@ -12,7 +12,7 @@ export default class Metro extends Component {
 
     render() {
         return (
-            <div className="metro_box">这是地铁图</div>
+            <div className="metro_box">这是笔记本</div>
         )
     }
 }

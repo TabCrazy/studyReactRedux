@@ -3,9 +3,9 @@
  */
 
 const initState = {
-    row:12
+    'title':'aaaa'
 }
-export default function metro(state = initState , action) {
+export default function notes(state = initState , action) {
     switch(action.type){
         case "ADD":
             console.log('add')
