@@ -7,11 +7,17 @@ export default class NoteItem extends Component {
     constructor(props){
         super(props)
     }
+
+    handlClick(){
+      const {id , actions} = this.props;
+      console.log(id)
+      actions.asynShowNote(id);
+    }
+
     render(){
         const {content,title,time} = this.props;
-
         return (
-            <div className="note_item">
+            <div className="note_item" onClick={ this.handlClick.bind(this) }>
                 <div className="note_item_title">{title}</div>
                 <div className="note_item_time">{time}</div>
                 <div className="note_item_content">{content}</div>

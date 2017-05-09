@@ -3,9 +3,12 @@
  */
 import React , { Component } from 'react';
 import { connect }  from 'react-redux';
-import { bindActionCreators } from 'redux'
-import * as actions from './actions'
-import NoteList from './components/note_list'
+import { bindActionCreators } from 'redux';
+
+import * as actions from './actions';
+import NoteList from './components/note_list';
+import NoteContent from './components/note_content';
+import NoteContentDefault from './components/note_content_default';
 
 class Notes extends Component {
 
@@ -20,20 +23,26 @@ class Notes extends Component {
     }
 
     render() {
-        const { actions , noteData } = this.props;
+        const { actions , notesData , showNoteData , isEdit } = this.props;
+        let cont = showNoteData ? <NoteContent showNoteData={showNoteData} actions={actions} /> : <NoteContentDefault  actions={actions} />;
+        let editCont = isEdit ? <NoteContent showNoteData={showNoteData} actions={actions} /> : cont;
         return (
             <div className="notes_box">
                 <div className="notes_sidebar">
-                    <NoteList {...this.props} />
+                    <NoteList actions={actions} notesData={notesData} />
                 </div>
-                <div className="notes_content_box"></div>
+                <div className="notes_content_box">
+                  {editCont}
+                </div>
             </div>
         )
     }
 }
 const mapStateToProps = state =>{
     return {
-        notesData:state.notesReducers.noteData
+        notesData:state.notesReducers.noteData,
+        showNoteData:state.notesReducers.showNote,
+        isEdit:state.notesReducers.isEdit
     }
 }
 const mapDispatchToProps = dispatch =>{

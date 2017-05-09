@@ -13,7 +13,7 @@ export default class NotesList extends Component {
         const { actions , notesData } = this.props;
 
         let items = notesData.map( item =>{
-            return <NoteItem key={`note_${item.id}`} {...item} />
+            return <NoteItem key={`note_${item.id}`} {...item} actions={actions} />
         });
 
         return (
