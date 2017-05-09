@@ -8,12 +8,12 @@ export default class NoteContent extends Component {
         super(props)
     }
     render(){
-        const {showNoteData} = this.props
+        const {title,time,content} = this.props.showNoteData
         return (
             <div className="note_content">
-                <div className="note_content_title">{showNoteData.title}</div>
-                <div className="note_content_time">{showNoteData.time}</div>
-                <div className="note_content_content">{showNoteData.content}</div>
+                <div className="note_content_title">{title}</div>
+                <div className="note_content_time">{time}</div>
+                <div className="note_content_content">{content}</div>
             </div>
         )
     }

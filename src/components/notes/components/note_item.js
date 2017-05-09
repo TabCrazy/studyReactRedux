@@ -10,7 +10,6 @@ export default class NoteItem extends Component {
 
     handlClick(){
       const {id , actions} = this.props;
-      console.log(id)
       actions.asynShowNote(id);
     }
 

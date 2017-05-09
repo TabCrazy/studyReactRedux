@@ -44,7 +44,6 @@ export function asynloadNotes(){
 }
 
 export const showNote = (data)=>{
-  console.log(data)
   return {
     type:types.VIEW_NOTE,
     data
