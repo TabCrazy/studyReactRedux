@@ -18,7 +18,7 @@ class Notes extends Component {
     }
 
     componentWillMount(){
-        const { actions } = this.props
+        const { actions } = this.props;
         actions.asynloadNotes()
     }
 
