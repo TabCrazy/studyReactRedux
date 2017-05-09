@@ -42,3 +42,20 @@ export function asynloadNotes(){
 
     }
 }
+
+export const showNote = (data)=>{
+  console.log(data)
+  return {
+    type:types.VIEW_NOTE,
+    data
+  }
+}
+
+export function asynShowNote(id){
+  return dispatch=>{
+    let showData = initData.filter( item=> item.id === id )
+    setTimeout(  ()=>{
+      dispatch( showNote( showData[0] ) )
+    },10)
+  }
+}

@@ -4,7 +4,9 @@
 import * as types from '../constants'
 
 const initState = {
-    noteData:[]
+    noteData:[],
+    showNote:null,
+    isEdit:false
 }
 export default function notes(state = initState , action) {
     switch(action.type){
@@ -12,6 +14,12 @@ export default function notes(state = initState , action) {
             return {
                 ...state,
                 noteData:action.data
+            }
+            break;
+      case types.VIEW_NOTE:
+            return {
+              ...state,
+              showNote:action.data
             }
             break;
         default:
